@@ -1,0 +1,38 @@
+{
+  "name": "typos-desktop",
+  "productName": "TYPOS",
+  "version": "1.0.0",
+  "description": "TYPOS Medical Store POS — Windows desktop app",
+  "author": "TYPOS",
+  "main": "main.js",
+  "scripts": {
+    "copy-frontend": "node scripts/copy-frontend.js",
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.typos.pos",
+    "productName": "TYPOS",
+    "copyright": "TYPOS Medical Store POS",
+    "directories": { "output": "release", "buildResources": "build" },
+    "files": ["main.js", "preload.js", "offline.html", "build/icon.png"],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "build/icon.ico",
+      "artifactName": "TYPOS-Setup.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "TYPOS POS",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# Environment files
+.env
+backend/.env
+frontend/.env.local
+
+# Build outputs
+dist/
+frontend/dist/
+
+# Large installers and binaries (>50MB)
+*.exe
+*.msi
+
+# Logs & temporary files
+*.log
+logs/
+backend/logs/
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
